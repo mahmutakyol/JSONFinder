@@ -1,0 +1,529 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\LibGit2Sharp.NativeBinaries.1.0.129\build\LibGit2Sharp.NativeBinaries.props" Condition="Exists('..\packages\LibGit2Sharp.NativeBinaries.1.0.129\build\LibGit2Sharp.NativeBinaries.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F64FB1F9-8B8F-45CD-A545-09E4D05730E9}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Tests</RootNamespace>
+    <AssemblyName>Tests</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>Tests.Program</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AdamsLair.WinForms, Version=1.1.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\AdamsLair.WinForms.1.1.4.0\lib\net45\AdamsLair.WinForms.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Aga.Controls, Version=1.7.6.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\AdamsLair.TreeViewAdv.1.7.6.0\lib\net20\Aga.Controls.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Duality, Version=2.7.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\AdamsLair.Duality.2.7.3\lib\Duality.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DualityEditor, Version=2.6.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\AdamsLair.Duality.Editor.2.6.2\lib\DualityEditor.exe</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DualityPrimitives, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\AdamsLair.Duality.Primitives.2.0.0\lib\DualityPrimitives.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FarseerDuality, Version=4.1.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\AdamsLair.FarseerDuality.4.1.1\lib\portable45-net45+win8+wpa81\FarseerDuality.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="LibGit2Sharp, Version=0.22.0.0, Culture=neutral, PublicKeyToken=7cbde695407f0333, processorArchitecture=MSIL">
+      <HintPath>..\packages\LibGit2Sharp.0.22.0\lib\net40\LibGit2Sharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration, Version=1.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Configuration.1.1.0\lib\netstandard1.1\Microsoft.Extensions.Configuration.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.Abstractions, Version=1.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Configuration.Abstractions.1.1.0\lib\netstandard1.0\Microsoft.Extensions.Configuration.Abstractions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.FileExtensions, Version=1.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Configuration.FileExtensions.1.1.0\lib\net451\Microsoft.Extensions.Configuration.FileExtensions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.Json, Version=1.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Configuration.Json.1.1.0\lib\net451\Microsoft.Extensions.Configuration.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.FileProviders.Abstractions, Version=1.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.FileProviders.Abstractions.1.1.0\lib\netstandard1.0\Microsoft.Extensions.FileProviders.Abstractions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.FileProviders.Physical, Version=1.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.FileProviders.Physical.1.1.0\lib\net451\Microsoft.Extensions.FileProviders.Physical.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.FileSystemGlobbing, Version=1.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.FileSystemGlobbing.1.1.0\lib\net45\Microsoft.Extensions.FileSystemGlobbing.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Primitives, Version=1.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Primitives.1.1.0\lib\netstandard1.0\Microsoft.Extensions.Primitives.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Web.XmlTransform, Version=2.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Xdt.2.1.1\lib\net40\Microsoft.Web.XmlTransform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MySql.Data, Version=6.8.3.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.ConnectorNET.Data.6.8.3.2\lib\net45\MySql.Data.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MySql.Data.Entity.EF6, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="MySql.Web, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Web.6.9.9\lib\net45\MySql.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NuGet.Core, Version=2.8.50926.602, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\NuGet.Core.2.8.3\lib\net40-Client\NuGet.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NVorbis, Version=0.7.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\AdamsLair.NVorbis.0.7.5\lib\portable-net45+win+wpa81+MonoAndroid10+xamarinios10+MonoTouch10\NVorbis.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PopupControl, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\AdamsLair.WinForms.PopupControl.1.0.0.0\lib\net40\PopupControl.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Extensions, Version=2.2.29.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.29\lib\net45\System.Net.Http.Extensions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http.Primitives, Version=4.2.29.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.29\lib\net45\System.Net.Http.Primitives.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.3.0\lib\netstandard1.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WeifenLuo.WinFormsUI.Docking, Version=2.8.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\AdamsLair.DockPanelSuite.2.8.1.0\lib\net20\WeifenLuo.WinFormsUI.Docking.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Config.cs" />
+    <Compile Include="Core\Dumps\FakeDBConnection.cs" />
+    <Compile Include="Core\TestDecorator.cs" />
+    <Compile Include="Core\Connection.cs" />
+    <Compile Include="Interfaces\ITest.cs" />
+    <Compile Include="Request.cs" />
+    <Compile Include="HTTP.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Scenarios\Auth\Login.cs" />
+    <Compile Include="Scenarios\Components\Creates\AuthorIdCreate.cs" />
+    <Compile Include="Scenarios\Components\Creates\BookIdCreate.cs" />
+    <Compile Include="Scenarios\Components\Creates\EditionCreate.cs" />
+    <Compile Include="Scenarios\Components\Creates\NameCreate.cs" />
+    <Compile Include="Scenarios\Components\Creates\PublisherNameCreate.cs" />
+    <Compile Include="Scenarios\Components\Creates\SurnameCreate.cs" />
+    <Compile Include="Scenarios\Components\Creates\UserIdCreate.cs" />
+    <Compile Include="Scenarios\Components\Deletes\DeleteAuthorId.cs" />
+    <Compile Include="Scenarios\Components\Deletes\DeleteBookId.cs" />
+    <Compile Include="Scenarios\Components\Deletes\DeleteEdition.cs" />
+    <Compile Include="Scenarios\Components\Deletes\DeleteName.cs" />
+    <Compile Include="Scenarios\Components\Deletes\DeletePublisherName.cs" />
+    <Compile Include="Scenarios\Components\Deletes\DeleteSurname.cs" />
+    <Compile Include="Scenarios\Components\Deletes\DeleteUserId.cs" />
+    <Compile Include="Scenarios\Components\Styles\StylesAll.cs" />
+    <Compile Include="Scenarios\Components\Styles\StylesDelete.cs" />
+    <Compile Include="Scenarios\Components\Styles\StylesInit.cs" />
+    <Compile Include="Scenarios\Components\Styles\StylesSave.cs" />
+    <Compile Include="Scenarios\Forms\Creates\AuthorRegistrationCreate.cs" />
+    <Compile Include="Scenarios\Forms\Creates\BookRegistrationCreate.cs" />
+    <Compile Include="Scenarios\Forms\Creates\UserRegistrationCreate.cs" />
+    <Compile Include="Scenarios\Forms\Deletes\DeleteAuthorRegistration.cs" />
+    <Compile Include="Scenarios\Forms\Deletes\DeleteBookRegistration.cs" />
+    <Compile Include="Scenarios\Forms\Deletes\DeleteUserRegistration.cs" />
+    <Compile Include="Scenarios\Forms\Design\AddWizards\AddAuthorWizard.cs" />
+    <Compile Include="Scenarios\Forms\Design\AddWizards\AddBookWizard.cs" />
+    <Compile Include="Scenarios\Forms\Design\AddWizards\AddUserWizard.cs" />
+    <Compile Include="Scenarios\Forms\Design\RemoveWizards\RemoveAuthorWizard.cs" />
+    <Compile Include="Scenarios\Forms\Design\RemoveWizards\RemoveBookWizard.cs" />
+    <Compile Include="Scenarios\Forms\Design\RemoveWizards\RemoveUserWizard.cs" />
+    <Compile Include="Scenarios\Forms\Saves\AuthorSave.cs" />
+    <Compile Include="Scenarios\Forms\Saves\BookSave.cs" />
+    <Compile Include="Scenarios\Forms\Saves\UserSave.cs" />
+    <Compile Include="Scenarios\Services\Definitions\GetServices.cs" />
+    <Compile Include="Scenarios\Services\Definitions\Init.cs" />
+    <Compile Include="Scenarios\Services\Definitions\Update.cs" />
+    <Compile Include="Scenarios\Services\Parameters\Init.cs" />
+    <Compile Include="Scenarios\Services\Parameters\Update.cs" />
+    <Compile Include="Scenarios\Forms\All.cs" />
+    <Compile Include="Scenarios\Forms\Delete.cs" />
+    <Compile Include="Scenarios\Forms\Create.cs" />
+    <Compile Include="Scenarios\Forms\Design\AddWizards.cs" />
+    <Compile Include="Scenarios\Forms\Design\GetWizards.cs" />
+    <Compile Include="Scenarios\Forms\Design\Init.cs" />
+    <Compile Include="Scenarios\Forms\Design\Move.cs" />
+    <Compile Include="Scenarios\Forms\Design\Preview.cs" />
+    <Compile Include="Scenarios\Forms\Design\PreviewParticial.cs" />
+    <Compile Include="Scenarios\Forms\Design\RemoveWizards.cs" />
+    <Compile Include="Scenarios\Forms\Design\SetLocaleTrigger.cs" />
+    <Compile Include="Scenarios\Forms\Design\ToggleButton.cs" />
+    <Compile Include="Scenarios\Forms\Formulas\Delete.cs" />
+    <Compile Include="Scenarios\Forms\Formulas\Formulas.cs" />
+    <Compile Include="Scenarios\Forms\Formulas\Save.cs" />
+    <Compile Include="Scenarios\Forms\GetById.cs" />
+    <Compile Include="Scenarios\Forms\Save.cs" />
+    <Compile Include="Scenarios\Forms\Update.cs" />
+    <Compile Include="Scenarios\Languages\Get.cs" />
+    <Compile Include="Scenarios\LangValues\Components\Component.cs" />
+    <Compile Include="Scenarios\LangValues\Components\Update.cs" />
+    <Compile Include="Scenarios\LangValues\General\ComboBoxes.cs" />
+    <Compile Include="Scenarios\LangValues\Lists\ByLang.cs" />
+    <Compile Include="Scenarios\LangValues\Lists\Init.cs" />
+    <Compile Include="Scenarios\LangValues\Lists\Update.cs" />
+    <Compile Include="Scenarios\LangValues\ListValues\GetValues.cs" />
+    <Compile Include="Scenarios\LangValues\ListValues\Init.cs" />
+    <Compile Include="Scenarios\LangValues\ListValues\Update.cs" />
+    <Compile Include="Scenarios\LangValues\SystemDates\ByLang.cs" />
+    <Compile Include="Scenarios\LangValues\SystemDates\Update.cs" />
+    <Compile Include="Scenarios\LangValues\Wizards\Update.cs" />
+    <Compile Include="Scenarios\LangValues\Wizards\Wizards.cs" />
+    <Compile Include="Scenarios\Lists\FilterConnections\Init.cs" />
+    <Compile Include="Scenarios\Lists\FilterConnections\SaveAll.cs" />
+    <Compile Include="Scenarios\Lists\Filter\ListsFilterCreate.cs" />
+    <Compile Include="Scenarios\Lists\Filter\ListsFilterDelete.cs" />
+    <Compile Include="Scenarios\Lists\Filter\ListsFilterFilters.cs" />
+    <Compile Include="Scenarios\Lists\Filter\ListsFilterGetById.cs" />
+    <Compile Include="Scenarios\Lists\Filter\ListsFilterInit.cs" />
+    <Compile Include="Scenarios\Lists\Filter\ListsFilterUpdate.cs" />
+    <Compile Include="Scenarios\Lists\System\City\ById.cs" />
+    <Compile Include="Scenarios\Lists\System\City\Cities.cs" />
+    <Compile Include="Scenarios\Lists\System\City\Create.cs" />
+    <Compile Include="Scenarios\Lists\System\City\Delete.cs" />
+    <Compile Include="Scenarios\Lists\System\City\Init.cs" />
+    <Compile Include="Scenarios\Lists\System\City\SelectBox.cs" />
+    <Compile Include="Scenarios\Lists\System\City\Update.cs" />
+    <Compile Include="Scenarios\Lists\System\Country\ByCode.cs" />
+    <Compile Include="Scenarios\Lists\System\Country\Countries.cs" />
+    <Compile Include="Scenarios\Lists\System\Country\Create.cs" />
+    <Compile Include="Scenarios\Lists\System\Country\Delete.cs" />
+    <Compile Include="Scenarios\Lists\System\Country\SelectBox.cs" />
+    <Compile Include="Scenarios\Lists\System\Country\ToggleDefault.cs" />
+    <Compile Include="Scenarios\Lists\System\Country\Update.cs" />
+    <Compile Include="Scenarios\Lists\System\District\ById.cs" />
+    <Compile Include="Scenarios\Lists\System\District\Create.cs" />
+    <Compile Include="Scenarios\Lists\System\District\Delete.cs" />
+    <Compile Include="Scenarios\Lists\System\District\District.cs" />
+    <Compile Include="Scenarios\Lists\System\District\Init.cs" />
+    <Compile Include="Scenarios\Lists\System\District\SelectBox.cs" />
+    <Compile Include="Scenarios\Lists\System\District\Update.cs" />
+    <Compile Include="Scenarios\Lists\System\Language\ById.cs" />
+    <Compile Include="Scenarios\Lists\System\Language\Create.cs" />
+    <Compile Include="Scenarios\Lists\System\Language\Delete.cs" />
+    <Compile Include="Scenarios\Lists\System\Language\LangDict.cs" />
+    <Compile Include="Scenarios\Lists\System\Language\Languages.cs" />
+    <Compile Include="Scenarios\Lists\System\Language\Selectbox.cs" />
+    <Compile Include="Scenarios\Lists\System\Language\SetAsDefault.cs" />
+    <Compile Include="Scenarios\Lists\System\Language\Update.cs" />
+    <Compile Include="Scenarios\Lists\System\Region\ByCode.cs" />
+    <Compile Include="Scenarios\Lists\System\Region\Create.cs" />
+    <Compile Include="Scenarios\Lists\System\Region\Delete.cs" />
+    <Compile Include="Scenarios\Lists\System\Region\Regions.cs" />
+    <Compile Include="Scenarios\Lists\System\Region\SelectBox.cs" />
+    <Compile Include="Scenarios\Lists\System\Region\ToggleDefault.cs" />
+    <Compile Include="Scenarios\Lists\System\Region\Update.cs" />
+    <Compile Include="Scenarios\ListTypes\Create.cs" />
+    <Compile Include="Scenarios\ListTypes\Delete.cs" />
+    <Compile Include="Scenarios\ListTypes\Get.cs" />
+    <Compile Include="Scenarios\ListTypes\GetById.cs" />
+    <Compile Include="Scenarios\ListTypes\GetForSelectBox.cs" />
+    <Compile Include="Scenarios\ListTypes\Repair.cs" />
+    <Compile Include="Scenarios\ListTypes\Update.cs" />
+    <Compile Include="Scenarios\ListTypes\Values\All.cs" />
+    <Compile Include="Scenarios\ListTypes\Values\AutoOrderBy.cs" />
+    <Compile Include="Scenarios\ListTypes\Children\Values.cs" />
+    <Compile Include="Scenarios\ListTypes\Children\ValuesBySystem.cs" />
+    <Compile Include="Scenarios\ListTypes\Values\Create.cs" />
+    <Compile Include="Scenarios\ListTypes\Values\Delete.cs" />
+    <Compile Include="Scenarios\ListTypes\Values\GetOptionsByValue.cs" />
+    <Compile Include="Scenarios\ListTypes\Values\GetParentList.cs" />
+    <Compile Include="Scenarios\ListTypes\Values\Move.cs" />
+    <Compile Include="Scenarios\ListTypes\Values\Paginate.cs" />
+    <Compile Include="Scenarios\ListTypes\Values\SetDefault.cs" />
+    <Compile Include="Scenarios\ListTypes\Values\Update.cs" />
+    <Compile Include="Scenarios\ListTypes\Values\Values.cs" />
+    <Compile Include="Scenarios\ListTypes\Values\ValuesWithParent.cs" />
+    <Compile Include="Scenarios\Logs\GetFilteredLogList.cs" />
+    <Compile Include="Scenarios\Logs\Init.cs" />
+    <Compile Include="Scenarios\Logs\Paginate.cs" />
+    <Compile Include="Scenarios\Managers\Create.cs" />
+    <Compile Include="Scenarios\Managers\Delete.cs" />
+    <Compile Include="Scenarios\Managers\GetById.cs" />
+    <Compile Include="Scenarios\Managers\Init.cs" />
+    <Compile Include="Scenarios\Managers\Update.cs" />
+    <Compile Include="Scenarios\Menus\Create.cs" />
+    <Compile Include="Scenarios\Menus\DeleteMenu.cs" />
+    <Compile Include="Scenarios\Menus\DeleteMenuById.cs" />
+    <Compile Include="Scenarios\Menus\GetAllMenus.cs" />
+    <Compile Include="Scenarios\Menus\GetFamilyTreeOfMenu.cs" />
+    <Compile Include="Scenarios\Menus\GetMenuById.cs" />
+    <Compile Include="Scenarios\Menus\GetMenusByParentId.cs" />
+    <Compile Include="Scenarios\Menus\GetMenusByReferenceIdAndParentId.cs" />
+    <Compile Include="Scenarios\Menus\GetParentMenus.cs" />
+    <Compile Include="Scenarios\Menus\GetParentMenusByReferenceId.cs" />
+    <Compile Include="Scenarios\Menus\GetParentMenusX.cs" />
+    <Compile Include="Scenarios\Menus\GetReferences.cs" />
+    <Compile Include="Scenarios\Menus\IsExistMenu.cs" />
+    <Compile Include="Scenarios\Menus\UpdateMenu.cs" />
+    <Compile Include="Scenarios\References\Delete.cs" />
+    <Compile Include="Scenarios\References\Get.cs" />
+    <Compile Include="Scenarios\References\GetById.cs" />
+    <Compile Include="Scenarios\References\Post.cs" />
+    <Compile Include="Scenarios\References\Update.cs" />
+    <Compile Include="Scenarios\Relationships\DeleteForeignKeys.cs" />
+    <Compile Include="Scenarios\Relationships\Get.cs" />
+    <Compile Include="Scenarios\Relationships\GetForeignKeys.cs" />
+    <Compile Include="Scenarios\Relationships\Post.cs" />
+    <Compile Include="Scenarios\Services\AddParameters.cs" />
+    <Compile Include="Scenarios\Services\AddService.cs" />
+    <Compile Include="Scenarios\Services\Execute.cs" />
+    <Compile Include="Scenarios\Services\GetServiceParameters.cs" />
+    <Compile Include="Scenarios\Services\GetServiceParametersByParameter.cs" />
+    <Compile Include="Scenarios\Services\GetServices.cs" />
+    <Compile Include="Scenarios\Services\Init.cs" />
+    <Compile Include="Scenarios\Services\ParametersInit.cs" />
+    <Compile Include="Scenarios\Table\Component\AddIndex.cs" />
+    <Compile Include="Scenarios\Table\Component\AddRelated.cs" />
+    <Compile Include="Scenarios\Table\Component\ByTable.cs" />
+    <Compile Include="Scenarios\Table\Component\ByWizard.cs" />
+    <Compile Include="Scenarios\Table\Component\Create.cs" />
+    <Compile Include="Scenarios\Table\Component\Creates\Authors\SurnameCreate.cs" />
+    <Compile Include="Scenarios\Table\Component\Creates\Books\AuthorIdCreate.cs" />
+    <Compile Include="Scenarios\Table\Component\Creates\Books\EditionCreate.cs" />
+    <Compile Include="Scenarios\Table\Component\Creates\Books\NameCreate.cs" />
+    <Compile Include="Scenarios\Table\Component\Creates\Books\PublisherNameCreate.cs" />
+    <Compile Include="Scenarios\Table\Component\Creates\Rents\BookIdCreate.cs" />
+    <Compile Include="Scenarios\Table\Component\Creates\Rents\UserIdCreate.cs" />
+    <Compile Include="Scenarios\Table\Component\Creates\Users\SurnameCreate.cs" />
+    <Compile Include="Scenarios\Table\Component\Creates\Users\NameCreate.cs" />
+    <Compile Include="Scenarios\Table\Component\Delete.cs" />
+    <Compile Include="Scenarios\Table\Component\DeleteRelated.cs" />
+    <Compile Include="Scenarios\Table\Component\RefactorReports\CompareComponents.cs" />
+    <Compile Include="Scenarios\Table\Delete.cs" />
+    <Compile Include="Scenarios\Table\Deletes\DeleteAuthors.cs" />
+    <Compile Include="Scenarios\Table\Deletes\DeleteBooks.cs" />
+    <Compile Include="Scenarios\Table\Deletes\DeleteRent.cs" />
+    <Compile Include="Scenarios\Table\Deletes\DeleteUser.cs" />
+    <Compile Include="Scenarios\Table\Get.cs" />
+    <Compile Include="Scenarios\Table\GetRelated.cs" />
+    <Compile Include="Scenarios\Table\Post.cs" />
+    <Compile Include="Scenarios\Table\Component\Creates\Authors\NameCreate.cs" />
+    <Compile Include="Scenarios\Table\Posts\PostAuthors.cs" />
+    <Compile Include="Scenarios\Table\Posts\PostBooks.cs" />
+    <Compile Include="Scenarios\Table\Posts\PostRent.cs" />
+    <Compile Include="Scenarios\Table\Posts\PostUser.cs" />
+    <Compile Include="Scenarios\Table\RefactorReports\GetNotExistInLogTable.cs" />
+    <Compile Include="Scenarios\Table\Component\Related.cs" />
+    <Compile Include="Scenarios\Table\Component\RemoveIndex.cs" />
+    <Compile Include="Scenarios\Table\Component\ToggleRelatedField.cs" />
+    <Compile Include="Scenarios\Table\Component\ToggleUnique.cs" />
+    <Compile Include="Scenarios\Table\RefactorReports\GetExistInLogTable.cs" />
+    <Compile Include="Scenarios\Table\ToggleRelatedTable.cs" />
+    <Compile Include="Scenarios\Table\UpdateDescription.cs" />
+    <Compile Include="Scenarios\Table\UpdateName.cs" />
+    <Compile Include="Scenarios\Components\Create.cs" />
+    <Compile Include="Scenarios\Components\Delete.cs" />
+    <Compile Include="Scenarios\Wizards\Delete.cs" />
+    <Compile Include="Scenarios\Wizards\DeleteSelectedTable.cs" />
+    <Compile Include="Scenarios\Wizards\Deletes\DeleteAuthors.cs" />
+    <Compile Include="Scenarios\Wizards\Deletes\DeleteBooks.cs" />
+    <Compile Include="Scenarios\Wizards\Deletes\DeleteUsers.cs" />
+    <Compile Include="Scenarios\Wizards\Fields\Add.cs" />
+    <Compile Include="Scenarios\Wizards\Fields\Adds\Authors\AuthorNameAdd.cs" />
+    <Compile Include="Scenarios\Wizards\Fields\Adds\Authors\AuthorSurnameAdd.cs" />
+    <Compile Include="Scenarios\Wizards\Fields\Adds\Books\BookAuthorIdAdd.cs" />
+    <Compile Include="Scenarios\Wizards\Fields\Adds\Books\BookEditionAdd.cs" />
+    <Compile Include="Scenarios\Wizards\Fields\Adds\Books\BookNameAdd.cs" />
+    <Compile Include="Scenarios\Wizards\Fields\Adds\Books\BookPublisherNameAdd.cs" />
+    <Compile Include="Scenarios\Wizards\Fields\Adds\Users\UserNameAdd.cs" />
+    <Compile Include="Scenarios\Wizards\Fields\Adds\Users\UserSurnameAdd.cs" />
+    <Compile Include="Scenarios\Wizards\Fields\AddWhereField.cs" />
+    <Compile Include="Scenarios\Wizards\Fields\ChangeOption.cs" />
+    <Compile Include="Scenarios\Wizards\Fields\Conditions\Add.cs" />
+    <Compile Include="Scenarios\Wizards\Fields\Conditions\All.cs" />
+    <Compile Include="Scenarios\Wizards\Fields\Conditions\Delete.cs" />
+    <Compile Include="Scenarios\Wizards\Fields\Conditions\GetListValues.cs" />
+    <Compile Include="Scenarios\Wizards\Fields\Conditions\Toggle.cs" />
+    <Compile Include="Scenarios\Wizards\Fields\Delete.cs" />
+    <Compile Include="Scenarios\Wizards\Fields\DeleteOnListWizard.cs" />
+    <Compile Include="Scenarios\Wizards\Fields\Get.cs" />
+    <Compile Include="Scenarios\Wizards\Fields\Init.cs" />
+    <Compile Include="Scenarios\Wizards\Fields\Move.cs" />
+    <Compile Include="Scenarios\Wizards\Fields\MoveListItem.cs" />
+    <Compile Include="Scenarios\Wizards\Fields\Rules\Add.cs" />
+    <Compile Include="Scenarios\Wizards\Fields\Rules\Delete.cs" />
+    <Compile Include="Scenarios\Wizards\Fields\Rules\Toggle.cs" />
+    <Compile Include="Scenarios\Wizards\Fields\Rules\Update.cs" />
+    <Compile Include="Scenarios\Wizards\Fields\ToggleHidden.cs" />
+    <Compile Include="Scenarios\Wizards\Fields\Validations\GetValidators.cs" />
+    <Compile Include="Scenarios\Wizards\Fields\Validations\GetVisualStyles.cs" />
+    <Compile Include="Scenarios\Wizards\Fields\Validations\Init.cs" />
+    <Compile Include="Scenarios\Wizards\Fields\Validations\Save.cs" />
+    <Compile Include="Scenarios\Components\ForSelectBox.cs" />
+    <Compile Include="Scenarios\Components\Get.cs" />
+    <Compile Include="Scenarios\Components\GetById.cs" />
+    <Compile Include="Scenarios\Components\GetReferencesAndLists.cs" />
+    <Compile Include="Scenarios\Components\GetUsedStats.cs" />
+    <Compile Include="Scenarios\Components\GetWithReferences.cs" />
+    <Compile Include="Scenarios\Components\GetWithReferencesAll.cs" />
+    <Compile Include="Scenarios\Wizards\Get.cs" />
+    <Compile Include="Scenarios\Wizards\GetById.cs" />
+    <Compile Include="Scenarios\Wizards\GetWizardTables.cs" />
+    <Compile Include="Scenarios\Wizards\Lists\Query.cs" />
+    <Compile Include="Scenarios\Components\Paginate.cs" />
+    <Compile Include="Scenarios\Wizards\Post.cs" />
+    <Compile Include="Scenarios\Wizards\Posts\PostAuthor.cs" />
+    <Compile Include="Scenarios\Wizards\Posts\PostBook.cs" />
+    <Compile Include="Scenarios\Wizards\Posts\PostUser.cs" />
+    <Compile Include="Scenarios\Wizards\Previews\Clear.cs" />
+    <Compile Include="Scenarios\Wizards\Previews\List.cs" />
+    <Compile Include="Scenarios\Wizards\Previews\Preview.cs" />
+    <Compile Include="Scenarios\Components\Update.cs" />
+    <Compile Include="Scenarios\Components\UpdateCode.cs" />
+    <Compile Include="Scenarios\Wizards\Update.cs" />
+    <Compile Include="UnitTests\MySQL\TableBuilder.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Helpers\Helpers.csproj">
+      <Project>{FF2649C7-07B7-4FF7-A33A-856DA46E527B}</Project>
+      <Name>Helpers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Repositories\Repositories.csproj">
+      <Project>{a8e93bdb-6079-4c15-a033-e4bdb2e10823}</Project>
+      <Name>Repositories</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\LibGit2Sharp.NativeBinaries.1.0.129\build\LibGit2Sharp.NativeBinaries.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\LibGit2Sharp.NativeBinaries.1.0.129\build\LibGit2Sharp.NativeBinaries.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

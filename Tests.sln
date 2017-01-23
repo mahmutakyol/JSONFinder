@@ -1,0 +1,65 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.40629.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{F64FB1F9-8B8F-45CD-A545-09E4D05730E9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repositories", "Repositories\Repositories.csproj", "{A8E93BDB-6079-4C15-A033-E4BDB2E10823}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Helpers", "Helpers\Helpers.csproj", "{FF2649C7-07B7-4FF7-A33A-856DA46E527B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Formulas", "Formulas\Formulas.csproj", "{5A77208D-75DD-41AC-A834-A6261BD664A7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Management", "Management\Management.csproj", "{C5C9A47A-7B75-4EE9-A0E6-0A4DC208F706}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RemoteDebugListener", "RemoteDebugListener\RemoteDebugListener.csproj", "{C24DC427-2B0A-478B-8529-6ED7884BD220}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Ozgur|Any CPU = Ozgur|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F64FB1F9-8B8F-45CD-A545-09E4D05730E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F64FB1F9-8B8F-45CD-A545-09E4D05730E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F64FB1F9-8B8F-45CD-A545-09E4D05730E9}.Ozgur|Any CPU.ActiveCfg = Release|Any CPU
+		{F64FB1F9-8B8F-45CD-A545-09E4D05730E9}.Ozgur|Any CPU.Build.0 = Release|Any CPU
+		{F64FB1F9-8B8F-45CD-A545-09E4D05730E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F64FB1F9-8B8F-45CD-A545-09E4D05730E9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A8E93BDB-6079-4C15-A033-E4BDB2E10823}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8E93BDB-6079-4C15-A033-E4BDB2E10823}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8E93BDB-6079-4C15-A033-E4BDB2E10823}.Ozgur|Any CPU.ActiveCfg = Ozgur|Any CPU
+		{A8E93BDB-6079-4C15-A033-E4BDB2E10823}.Ozgur|Any CPU.Build.0 = Ozgur|Any CPU
+		{A8E93BDB-6079-4C15-A033-E4BDB2E10823}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8E93BDB-6079-4C15-A033-E4BDB2E10823}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FF2649C7-07B7-4FF7-A33A-856DA46E527B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF2649C7-07B7-4FF7-A33A-856DA46E527B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF2649C7-07B7-4FF7-A33A-856DA46E527B}.Ozgur|Any CPU.ActiveCfg = Ozgur|Any CPU
+		{FF2649C7-07B7-4FF7-A33A-856DA46E527B}.Ozgur|Any CPU.Build.0 = Ozgur|Any CPU
+		{FF2649C7-07B7-4FF7-A33A-856DA46E527B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF2649C7-07B7-4FF7-A33A-856DA46E527B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5A77208D-75DD-41AC-A834-A6261BD664A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A77208D-75DD-41AC-A834-A6261BD664A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A77208D-75DD-41AC-A834-A6261BD664A7}.Ozgur|Any CPU.ActiveCfg = Ozgur|Any CPU
+		{5A77208D-75DD-41AC-A834-A6261BD664A7}.Ozgur|Any CPU.Build.0 = Ozgur|Any CPU
+		{5A77208D-75DD-41AC-A834-A6261BD664A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A77208D-75DD-41AC-A834-A6261BD664A7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C5C9A47A-7B75-4EE9-A0E6-0A4DC208F706}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5C9A47A-7B75-4EE9-A0E6-0A4DC208F706}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5C9A47A-7B75-4EE9-A0E6-0A4DC208F706}.Ozgur|Any CPU.ActiveCfg = Ozgur|Any CPU
+		{C5C9A47A-7B75-4EE9-A0E6-0A4DC208F706}.Ozgur|Any CPU.Build.0 = Ozgur|Any CPU
+		{C5C9A47A-7B75-4EE9-A0E6-0A4DC208F706}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5C9A47A-7B75-4EE9-A0E6-0A4DC208F706}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C24DC427-2B0A-478B-8529-6ED7884BD220}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C24DC427-2B0A-478B-8529-6ED7884BD220}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C24DC427-2B0A-478B-8529-6ED7884BD220}.Ozgur|Any CPU.ActiveCfg = Ozgur|Any CPU
+		{C24DC427-2B0A-478B-8529-6ED7884BD220}.Ozgur|Any CPU.Build.0 = Ozgur|Any CPU
+		{C24DC427-2B0A-478B-8529-6ED7884BD220}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C24DC427-2B0A-478B-8529-6ED7884BD220}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
